@@ -9,7 +9,7 @@ namespace Option2
     /// </summary>
     public class Drawing
     {
-        private readonly List<Shape> _shapes;
+        private List<Shape> _shapes;
         private Color _background;
 
         /// <summary>
@@ -54,6 +54,14 @@ namespace Option2
         }
 
         /// <summary>
+        /// Gets a list of all currently selected shapes.
+        /// </summary>
+        public List<Shape> SelectedShapes
+        {
+            get { return _shapes.Where(s => s.Selected).ToList(); }
+        }
+
+        /// <summary>
         /// Adds a shape to the drawing.
         /// </summary>
         public void AddShape(Shape s)
@@ -88,26 +96,6 @@ namespace Option2
                 {
                     s.Selected = false;
                 }
-            }
-        }
-
-        /// <summary>
-        /// Gets a list of all currently selected shapes.
-        /// </summary>
-        public List<Shape> SelectedShapes
-        {
-            get
-            {
-                List<Shape> result;
-                result = new List<Shape>();
-                foreach (Shape s in _shapes)
-                {
-                    if (s.Selected == true)
-                    {
-                        result.Add(s);
-                    }
-                }
-                return result;
             }
         }
 

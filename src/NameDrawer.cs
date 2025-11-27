@@ -8,36 +8,27 @@ namespace Option2
     /// </summary>
     public class NameDrawer
     {
-        private readonly string _name;
-        private readonly Color _color;
-        private readonly float _startX;
-        private readonly float _startY;
-        private readonly float _letterSpacing;
-        private readonly int _lineThickness;
+        private string _name;
+        private Color _color;
+        private float _startX;
+        private float _startY;
+        private int _lineThickness;
 
         /// <summary>
         /// Initializes a new instance of the NameDrawer class.
         /// </summary>
-        /// <param name="name">The name to draw.</param>
-        /// <param name="color">The color to use for drawing.</param>
-        /// <param name="startX">Starting X coordinate.</param>
-        /// <param name="startY">Starting Y coordinate.</param>
-        /// <param name="letterSpacing">Spacing between letters.</param>
-        /// <param name="lineThickness">Thickness for lines used in letters.</param>
-        public NameDrawer(string name, Color color, float startX = 50, float startY = 250, float letterSpacing = 80, int lineThickness = 15)
+        public NameDrawer(string name, Color color, float startX = 50, float startY = 250, int lineThickness = 15)
         {
             _name = name.ToUpper();
             _color = color;
             _startX = startX;
             _startY = startY;
-            _letterSpacing = letterSpacing;
             _lineThickness = lineThickness;
         }
 
         /// <summary>
         /// Draws the name on the canvas by adding shapes to the drawing.
         /// </summary>
-        /// <param name="drawing">The drawing to add shapes to.</param>
         public void DrawName(Drawing drawing)
         {
             float currentX = _startX;
@@ -52,38 +43,15 @@ namespace Option2
         /// <summary>
         /// Gets the width of a letter for spacing calculations.
         /// </summary>
-        /// <param name="letter">The letter to measure.</param>
-        /// <returns>The width of the letter in pixels.</returns>
         private float GetLetterWidth(char letter)
         {
             switch (letter)
             {
                 case 'A': return 65;
-                case 'B': return 55;
-                case 'C': return 70;
-                case 'D': return 70;
-                case 'E': return 50;
-                case 'F': return 50;
-                case 'G': return 70;
-                case 'H': return 65;
-                case 'I': return 20;
-                case 'J': return 50;
-                case 'K': return 85;
                 case 'L': return 60;
-                case 'M': return 80;
+                case 'B': return 55;
+                case 'I': return 20;
                 case 'N': return 100;
-                case 'O': return 70;
-                case 'P': return 45;
-                case 'Q': return 80;
-                case 'R': return 75;
-                case 'S': return 50;
-                case 'T': return 60;
-                case 'U': return 65;
-                case 'V': return 70;
-                case 'W': return 80;
-                case 'X': return 60;
-                case 'Y': return 60;
-                case 'Z': return 60;
                 case ' ': return 30; // Space width
                 default: return 40; // Default width for unknown characters
             }
@@ -92,9 +60,6 @@ namespace Option2
         /// <summary>
         /// Draws a single letter at the specified position.
         /// </summary>
-        /// <param name="letter">The letter to draw.</param>
-        /// <param name="x">X coordinate for the letter.</param>
-        /// <param name="drawing">The drawing to add shapes to.</param>
         private void DrawLetter(char letter, float x, Drawing drawing)
         {
             switch (letter)

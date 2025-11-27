@@ -19,15 +19,9 @@ namespace Option2
         /// <summary>
         /// Initializes a new instance of the RandomShapeGenerator class.
         /// </summary>
-        /// <param name="minShapes">Minimum number of shapes to generate.</param>
-        /// <param name="maxShapes">Maximum number of shapes to generate (exclusive).</param>
-        /// <param name="minX">Minimum X coordinate for shape placement.</param>
-        /// <param name="maxX">Maximum X coordinate for shape placement.</param>
-        /// <param name="minY">Minimum Y coordinate for shape placement.</param>
-        /// <param name="maxY">Maximum Y coordinate for shape placement.</param>
         public RandomShapeGenerator(int minShapes = 5, int maxShapes = 15, 
-                                   float minX = 50, float maxX = 750, 
-                                   float minY = 50, float maxY = 550)
+                       float minX = 50, float maxX = 750, 
+                       float minY = 50, float maxY = 550)
         {
             _random = new Random();
             _minShapes = minShapes;
@@ -41,7 +35,6 @@ namespace Option2
         /// <summary>
         /// Generates a random number of shapes and adds them to the drawing.
         /// </summary>
-        /// <param name="drawing">The drawing to add shapes to.</param>
         public void GenerateShapes(Drawing drawing)
         {
             int numShapes = _random.Next(_minShapes, _maxShapes);
@@ -56,7 +49,6 @@ namespace Option2
         /// <summary>
         /// Creates a single random shape with random type, color, and position.
         /// </summary>
-        /// <returns>A randomly generated shape.</returns>
         private Shape CreateRandomShape()
         {
             int shapeType = _random.Next(0, 3); // 0=Rectangle, 1=Circle, 2=Line

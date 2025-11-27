@@ -9,23 +9,10 @@ namespace Option2
     /// </summary>
     public class ShapeFactory
     {
-        /// <summary>
-        /// Enumeration of available shape types.
-        /// </summary>
-        public enum ShapeType
-        {
-            Rectangle,
-            Circle,
-            Line
-        }
 
         /// <summary>
         /// Creates a shape of the specified type at the given position.
         /// </summary>
-        /// <param name="shapeType">The type of shape to create.</param>
-        /// <param name="x">The X coordinate for the shape.</param>
-        /// <param name="y">The Y coordinate for the shape.</param>
-        /// <returns>A new shape instance.</returns>
         public Shape CreateShape(ShapeType shapeType, float x, float y)
         {
             Shape newShape;

@@ -5496,11 +5496,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dino\\OneDrive - Swinburne Sarawak\\Pandora's Box\\OOP\\Option2\\Option2\\Option2.csproj",
+      "projectUniqueName": "C:\\Users\\Dino\\OneDrive - Swinburne Sarawak\\Pandora's Box\\OOP\\Option2Github\\Option2.csproj",
       "projectName": "Option2",
-      "projectPath": "C:\\Users\\Dino\\OneDrive - Swinburne Sarawak\\Pandora's Box\\OOP\\Option2\\Option2\\Option2.csproj",
+      "projectPath": "C:\\Users\\Dino\\OneDrive - Swinburne Sarawak\\Pandora's Box\\OOP\\Option2Github\\Option2.csproj",
       "packagesPath": "C:\\Users\\Dino\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dino\\OneDrive - Swinburne Sarawak\\Pandora's Box\\OOP\\Option2\\Option2\\obj\\",
+      "outputPath": "C:\\Users\\Dino\\OneDrive - Swinburne Sarawak\\Pandora's Box\\OOP\\Option2Github\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Visual Studio\\Shared\\NuGetPackages"
