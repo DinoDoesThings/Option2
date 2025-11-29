@@ -110,7 +110,7 @@ namespace Option2
         /// </summary>
         private void DrawLetterB(float x, Drawing drawing)
         {
-            drawing.AddShape(new Rectangle1(_color, x, _startY, 30, 100)); // Vertical stem (thicker)
+            drawing.AddShape(new Rectangle1(_color, x, _startY, 30, 100)); // Vertical stem 
             drawing.AddShape(new Circle1(_color, 25) { X = x + 30, Y = _startY + 25 }); // Top curve
             drawing.AddShape(new Circle1(_color, 25) { X = x + 30, Y = _startY + 75 }); // Bottom curve
             
