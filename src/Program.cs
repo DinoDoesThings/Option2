@@ -20,13 +20,24 @@ namespace Option2
             ShapeScaler shapeScaler = new ShapeScaler(0.8f);
             ShapeType currentShapeType = ShapeType.Circle;
             ShapeFactory shapeFactory = new ShapeFactory();
+            ColorCycler colorCycler = new ColorCycler();
 
             do
             {
                 SplashKit.ProcessEvents();
                 SplashKit.ClearScreen(Color.White);
 
-                // --- Input Handling ---
+                // Color cycling with mouse scroll wheel
+                Vector2D scrollMovement = SplashKit.MouseWheelScroll();
+                if (scrollMovement.Y > 0)
+                {
+                    colorCycler.CycleNext();
+                }
+                else if (scrollMovement.Y < 0)
+                {
+                    colorCycler.CyclePrevious();
+                }
+
                 // Shape type selection
                 if (SplashKit.KeyTyped(KeyCode.RKey)) currentShapeType = ShapeType.Rectangle;
                 else if (SplashKit.KeyTyped(KeyCode.CKey)) currentShapeType = ShapeType.Circle;
@@ -37,7 +48,7 @@ namespace Option2
                 {
                     float mouseX = SplashKit.MouseX();
                     float mouseY = SplashKit.MouseY();
-                    Shape newShape = shapeFactory.CreateShape(currentShapeType, mouseX, mouseY);
+                    Shape newShape = shapeFactory.CreateShape(currentShapeType, mouseX, mouseY, colorCycler.CurrentColor);
                     drawing.AddShape(newShape);
                 }
 
@@ -72,8 +83,8 @@ namespace Option2
 
                 // On-screen controls legend
                 string controls = "Controls: R Rectangle | C Circle | L Line | Left-click Draw | Right-click Select";
-                string extrafeatures = "Space Background | M Random | N Name | S Scale | Backspace/DEL Remove";
-                string current = $"Current Shape: {currentShapeType}";
+                string extrafeatures = "Space Background | M Random | N Name | S Scale | Backspace/DEL Remove | Scroll Color";
+                string current = $"Current Shape: {currentShapeType} | Current Color: {colorCycler.CurrentColorName}";
                 SplashKit.DrawTextOnWindow(window, controls, Color.Black, 10, 10);
                 SplashKit.DrawTextOnWindow(window, extrafeatures, Color.Black, 10, 28);
                 SplashKit.DrawTextOnWindow(window, current, Color.Black, 10, 46);

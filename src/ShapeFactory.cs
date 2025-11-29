@@ -11,35 +11,29 @@ namespace Option2
     {
 
         /// <summary>
-        /// Creates a shape of the specified type at the given position.
+        /// Creates a shape of the specified type at the given position with the specified color.
         /// </summary>
-        public Shape CreateShape(ShapeType shapeType, float x, float y)
+        public Shape CreateShape(ShapeType shapeType, float x, float y, Color color)
         {
             Shape newShape;
 
             switch (shapeType)
             {
                 case ShapeType.Circle:
-                    Circle1 newCircle = new Circle1();
+                    Circle1 newCircle = new Circle1(color, 50);
                     newCircle.X = x;
                     newCircle.Y = y;
                     newShape = newCircle;
                     break;
 
                 case ShapeType.Line:
-                    Line1 newLine = new Line1();
-                    newLine.X = x;
-                    newLine.Y = y;
-                    newLine.EndX = x + 150;
-                    newLine.EndY = y + 150;
+                    Line1 newLine = new Line1(color, x, y, x + 150, y + 150);
                     newShape = newLine;
                     break;
 
                 case ShapeType.Rectangle:
                 default:
-                    Rectangle1 newRect = new Rectangle1();
-                    newRect.X = x;
-                    newRect.Y = y;
+                    Rectangle1 newRect = new Rectangle1(color, x, y, 100, 100);
                     newShape = newRect;
                     break;
             }
