@@ -33,20 +33,6 @@ namespace Option2
         }
 
         /// <summary>
-        /// Generates a random number of shapes and adds them to the drawing.
-        /// </summary>
-        public void GenerateShapes(Drawing drawing)
-        {
-            int numShapes = _random.Next(_minShapes, _maxShapes);
-            
-            for (int i = 0; i < numShapes; i++)
-            {
-                Shape newShape = CreateRandomShape();
-                drawing.AddShape(newShape);
-            }
-        }
-
-        /// <summary>
         /// Creates a single random shape with random type, color, and position.
         /// </summary>
         private Shape CreateRandomShape()
@@ -75,6 +61,20 @@ namespace Option2
             }
 
             return newShape;
+        }
+
+        /// <summary>
+        /// Generates a random number of shapes and adds them to the drawing.
+        /// </summary>
+        public void GenerateShapes(Drawing drawing)
+        {
+            int numShapes = _random.Next(_minShapes, _maxShapes);
+            
+            for (int i = 0; i < numShapes; i++)
+            {
+                Shape newShape = CreateRandomShape();
+                drawing.AddShape(newShape);
+            }
         }
     }
 }
